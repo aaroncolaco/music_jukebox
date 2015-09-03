@@ -1,0 +1,17 @@
+.not-found {
+	background-image:url('/images/unsplash7.jpg');
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;   
+}
+
+.not-found .container {
+	position: relative;
+	top:100px;
+}
+
+.not-found h1 {
+	color: #ffffff;
+	font-size: 4em;
+}

@@ -1,0 +1,23 @@
+.jumbotron {
+	background-image:url('/images/unsplash1.jpg');
+	height: 100%;	/*So that jumbotron is full height even on large screens*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 0px;
+	background-attachment: fixed;   /*Keeps the image stationary so that the other stuff scrolls over it*/
+}
+
+.jumbotron .container {
+	position: relative;
+	top:100px;
+}
+
+.jumbotron h1 {
+	color: #ffffff;
+	font-size: 6.5em; 
+}
+
+.jumbotron p {
+	color: #ffffff;
+	font-size: 1.5em;
+}

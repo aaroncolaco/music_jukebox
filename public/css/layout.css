@@ -1,0 +1,31 @@
+html {
+	height: 100%;	/*So that the 100% divs are full height*/
+}
+
+body { 
+	height: 100%;	/*So that the 100% divs are full height*/
+	padding-top: 3%;
+}
+
+.navbar {
+	width: 100%;
+	z-index: 1;
+}
+
+.navbar > .navbar-collapse {
+	text-align: center;
+}
+
+#footer { 
+	height: 8%;
+	background-color: #832A0D;
+	padding-top: 1.5%;
+}
+
+#footer p { 
+	color: #000000;
+	text-align: center;
+}
+#footer a, u {
+	color: #ffff00;
+}

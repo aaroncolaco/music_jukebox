@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		<%= erb :layout_head %>
+	</head>
+
+
+	<body>
+		<%= erb :nav %>
+
+		<%= yield %>
+
+		<div id="footer">
+			<p>Created by <u><a href="https://aarongoa.github.io">Aaron</a></u></p>
+		</div>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script async type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+			
+	</body>
+</html>

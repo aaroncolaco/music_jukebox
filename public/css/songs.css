@@ -1,0 +1,25 @@
+.songs {
+	background-image:url('/images/music4.jpg');		/*or put unsplash6.jpg*/
+	height: auto;
+	min-height: 100%;
+	height:auto !important;	 /*For IE - piece of shit*/
+	height: 100%;			 /*For IE - piece of shit*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;   
+}
+
+.songs .container {
+	position: relative;
+	top:100px;
+}
+
+.songs h1 {
+	color: #ffffff;
+	font-size: 4em;
+}
+
+.songs p {
+	color: #ffffff;
+	font-size: 1.5em;
+}

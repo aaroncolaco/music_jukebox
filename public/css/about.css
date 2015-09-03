@@ -1,0 +1,22 @@
+.about {
+	background-image:url('/images/music2.jpg');
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;   
+}
+
+.about .container {
+	position: relative;
+	top:100px;
+}
+
+.about h1 {
+	color: #ffffff;
+	font-size: 4em;
+}
+
+.about p {
+	color: #ffffff;
+	font-size: 1.5em;
+}
