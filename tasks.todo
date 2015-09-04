@@ -1,0 +1,3 @@
+ ☐ Figure out why controllers dont work if placed in song.rb
+ ☐ Do CSS for show_song.erb
+ ☐ Embed videos in show_song using the link from the DB. Use Ruby
