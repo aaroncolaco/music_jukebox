@@ -39,7 +39,7 @@ get '/songs/:id/edit' do
 	erb :edit_song
 end
 
-# Add new song
+# Add song
 post '/songs' do
 	# To convert the entered time string to seconds instead of xx:xx format:
 	# incoming data is in 'song' hash. 
@@ -66,6 +66,12 @@ put '/songs/:id' do
 	song = Song.get(params[:id])
 	song.update(foo)
 	redirect to("/songs/#{song.id}")
+end
+
+# Delete song
+delete '/songs/:id' do
+	Song.get(params[:id]).destroy
+	redirect to('/songs')
 end
 
 not_found do
