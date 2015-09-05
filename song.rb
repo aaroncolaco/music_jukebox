@@ -1,6 +1,5 @@
 require 'dm-core'
 require 'dm-migrations'
-require 'sinatra'
 
 DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
 
@@ -21,8 +20,3 @@ class Song
 end
 
 DataMapper.finalize
-
-get '/songs' do
-	@songs = Song.all
-	erb :songs
-end
