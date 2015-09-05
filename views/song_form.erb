@@ -1,4 +1,4 @@
-<% length = (@song.length / 60).to_s + ':' + (@song.length % 60).to_s %>
+<% length = (@song.length.to_i / 60).to_s + ':' + (@song.length.to_i % 60).to_s %>
 
 <div class="form-group">
 	<input class="form-control" type="text" name="song[title]" value="<%= @song.title %>" placeholder="Title">
