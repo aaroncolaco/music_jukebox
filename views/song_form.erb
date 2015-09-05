@@ -1,0 +1,25 @@
+<div class="form-group">
+	<input class="form-control" type="text" name="song[title]" value="<%= @song.title %>" placeholder="Title">
+</div>
+
+<div class="form-group">
+	<input class="form-control" type="text" name="song[artist]" value="<%= @song.artist %>" placeholder="Artist">
+</div>
+
+<div class="form-group">
+	<input class="form-control" type="text" name="song[video_link]" value="<%= @song.video_link %>" placeholder="YouTube link" >	
+</div>
+
+<div class="form-group">
+	<input class="form-control" type="number" name="song[length]" value="<%= @song.length %>" placeholder="Length (seconds)" >	
+</div>
+
+<div class="form-group">
+	<input class="form-control" type="text" name="song[released_on]" value="<%= @song.released_on.strftime("%Y") if @song.released_on %>" placeholder="Release Year" >	
+</div>
+
+<div class="form-group">
+	<textarea class="form-control" name="song[lyrics]" value="<%= @song.lyrics %>" placeholder="Lyrics"></textarea>
+</div>
+
+<input class="btn btn-primary" type="submit" value="Save" >

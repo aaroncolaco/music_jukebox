@@ -1,5 +1,6 @@
 require 'dm-core'
 require 'dm-migrations'
+require 'sinatra'
 
 DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
 
@@ -9,9 +10,13 @@ class Song
 	property :title, String
 	property :artist, String
 	property :video_link, String
-	property :lyrics, Text
 	property :length, Integer
 	property :released_on, Date
+	property :lyrics, Text
+
+	def released_on=date
+		super Date.strptime(date, '%Y')
+	end
 	
 end
 
