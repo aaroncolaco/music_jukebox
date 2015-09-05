@@ -1,3 +1,5 @@
+# To populate DB with fake songs
+
 require "./song"
 
 lyrics = "Some really cool words here..."
