@@ -1,5 +1,5 @@
 require 'sinatra'
-require "./song"
+require './song'
 
 # Reload if in development mode
 require 'sinatra/reloader' if development?
@@ -41,14 +41,30 @@ end
 
 # Add new song
 post '/songs' do
-	song = Song.create(params[:song])
+	# To convert the entered time string to seconds instead of xx:xx format:
+	# incoming data is in 'song' hash. 
+	# create hash 'foo'. Use foo in the update method after formatting the length
+	foo = params[:song]
+	time = foo[:length].to_s.split(':')
+	time = (time.first.to_i * 60 + time.last.to_i)
+	foo[:length] = time
+
+	song = Song.create(foo)
 	redirect to("/songs/#{song.id}")
 end
 
 # Update song
 put '/songs/:id' do
+	# To convert the entered time string to seconds instead of xx:xx format:
+	# incoming data is in 'song' hash. 
+	# create hash 'foo'. Use foo in the update method after formatting the length
+	foo = params[:song]
+	time = foo[:length].to_s.split(':')
+	time = (time.first.to_i * 60 + time.last.to_i)
+	foo[:length] = time
+
 	song = Song.get(params[:id])
-	song.update(params[:song])
+	song.update(foo)
 	redirect to("/songs/#{song.id}")
 end
 
