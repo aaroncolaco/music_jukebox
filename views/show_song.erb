@@ -1,14 +1,19 @@
 <link rel="stylesheet" type="text/css" href="/css/show_song.css">	
 
+<% released_on = @song.released_on.strftime("%Y").to_s %>
+<% song_length = "#{@song.length/60}min #{@song.length%60}sec" %>
+<% video_link = @song.video_link %>
+<% edit_link ="/songs/#{@song.id}/edit"%>
+
 <div class="song">
 	<div class="container">
 		<h1><%= @song.title %></h1>
-		<h3><%= " by " + @song.artist  + " (#{@song.released_on.strftime("%Y")})"%></h3>
-		<h5>Length: <%= "#{@song.length/60}min #{@song.length%60}sec" %></h5>
-		<a class="btn btn-link" href="<%= @song.video_link %>">YouTube Video</a>
+		<h3><%= "by " + @song.artist  +  ' (' + released_on + ')' %></h3>
+		<h5>Length: <%= song_length %></h5>
+		<a class="btn btn-link" href="<%= video_link %>">YouTube Video</a>
 		<p><%= @song.lyrics %></p>
 
-		<a class="btn btn-primary edit-link" href= <%="/songs/#{@song.id}/edit"%> >Edit</a>
+		<a class="btn btn-primary edit-link" href= <%= edit_link %> >Edit</a>
 
 		<form class="hidden-form" method="POST">
 			<input type="hidden" name="_method" value="DELETE">
