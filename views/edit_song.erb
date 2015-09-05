@@ -1,0 +1,12 @@
+<link rel="stylesheet" type="text/css" href="/css/new_and_edit_song.css">
+
+<div class="form">
+	<div class="container">
+		<h1 class="heading">Edit Song</h1>
+		
+		<form method="POST" action="/songs/<%= @song.id %>" autocomplete="on" >
+			<input type="hidden" name="_method" value="PUT">
+			<%= erb :song_form %>
+		</form>
+	</div>
+</div>
