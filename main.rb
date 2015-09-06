@@ -4,6 +4,12 @@ require './song'
 # Reload if in development mode
 require 'sinatra/reloader' if development?
 
+configure do
+	enable :sessions
+	set :username, 'aaron'
+	set :password, 'aaron'
+end
+
 get '/' do
 	@title = "Musical Jukebox"
 	erb :home

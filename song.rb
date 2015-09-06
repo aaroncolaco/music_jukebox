@@ -1,8 +1,6 @@
 require 'dm-core'
 require 'dm-migrations'
 
-DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
-
 class Song
 	include DataMapper::Resource
 	property :id, Serial
@@ -17,6 +15,10 @@ class Song
 		super Date.strptime(date, '%Y')
 	end
 	
+end
+
+configure :development do
+	DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
 end
 
 DataMapper.finalize
