@@ -31,7 +31,15 @@ get '/songs' do
 end
 
 get '/login' do
+	if session[:admin]
+		redirect to ("/songs")
+	end
 	erb :login
+end
+
+get '/logout' do
+	session.clear
+	redirect to('/login')
 end
 
 get '/songs/new' do
