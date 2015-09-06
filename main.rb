@@ -30,6 +30,10 @@ get '/songs' do
 	erb :songs
 end
 
+get '/login' do
+	erb :login
+end
+
 get '/songs/new' do
 	@song = Song.new
 	erb :new_song
@@ -78,6 +82,15 @@ end
 delete '/songs/:id' do
 	Song.get(params[:id]).destroy
 	redirect to('/songs')
+end
+
+post '/login' do
+	if params[:username] == settings.username && params[:password] == settings.password
+		session[:admin] = true
+		redirect to('/songs')
+	else
+		erb :login
+	end
 end
 
 not_found do

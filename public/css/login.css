@@ -1,0 +1,29 @@
+.form {
+	background-image:url('/images/unsplash6.jpg');
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;   
+}
+
+.form .container {
+	padding-top: 8%;
+}
+
+form {
+	margin: 0 auto;
+	opacity: 0.9;
+	width: 40%;
+}
+
+.form h1 {
+	color: #ffffff;
+	margin-left: 30%;
+	font-size: 3em;
+}
+
+.report .container {
+	position: relative;
+	top: 20px;
+	opacity: 0.7;
+}
