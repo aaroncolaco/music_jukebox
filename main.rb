@@ -35,6 +35,8 @@ get '/login' do
 end
 
 get '/songs/new' do
+	# Only works if admin logged in
+	halt(401,'Not Authorized') unless session[:admin]
 	@song = Song.new
 	erb :new_song
 end
@@ -80,6 +82,8 @@ end
 
 # Delete song
 delete '/songs/:id' do
+	# Only works if admin logged in
+	halt(401,'Not Authorized') unless session[:admin]
 	Song.get(params[:id]).destroy
 	redirect to('/songs')
 end
