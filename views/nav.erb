@@ -17,6 +17,13 @@
 				<li><a href="/contact">Contact Us</a></li>
 				<li><a href="/songs">Songs</a></li>
 			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<% if !session[:admin] %>
+					<a href="/login" class="btn btn-default btn-primary navbar-btn">Sign in</a>
+				<% else %>
+					<a href="/logout" class="btn btn-default btn-danger navbar-btn">Sign out</a>
+				<% end %>
+			</ul>
 		</div>
 	</div>
 </nav>

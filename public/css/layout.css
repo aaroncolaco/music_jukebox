@@ -16,6 +16,10 @@ body {
 	text-align: center;
 }
 
+.navbar-btn {
+	margin-left: -50%;
+}
+
 #footer { 
 	height: 8%;
 	background-color: #832A0D;
