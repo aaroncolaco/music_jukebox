@@ -53,6 +53,11 @@ end
 
 # Add song
 post '/songs' do
+	# Need to proted from direct post reqest that someone may try
+	# since the form is accessible only to admin
+	# Only works if admin logged in
+	halt(401,'Not Authorized') unless session[:admin]
+
 	# To convert the entered time string to seconds instead of xx:xx format:
 	# incoming data is in 'song' hash. 
 	# create hash 'foo'. Use foo in the update method after formatting the length
