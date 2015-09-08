@@ -24,6 +24,10 @@
 	font-size: 1.5em;
 }
 
+.song pre {
+	opacity: 0.9;
+}
+
 .song .edit-link {
 	margin-right: 2%;
 }

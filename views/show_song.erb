@@ -11,7 +11,7 @@
 		<h3><%= "by " + @song.artist  +  ' (' + released_on + ')' %></h3>
 		<h5>Length: <%= length %></h5>
 		<a class="btn btn-link" href="<%= video_link %>">YouTube Video</a>
-		<p><%= @song.lyrics %></p>
+		<pre><%= @song.lyrics %></pre>
 
 		<a class="btn btn-primary edit-link" href= <%= edit_link %> >Edit</a>
 
