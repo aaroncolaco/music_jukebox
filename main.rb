@@ -10,6 +10,16 @@ configure do
 	set :password, 'aaron'
 end
 
+# DB for development
+configure :development do
+	DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
+end
+
+# DB for production
+configure :production do
+	DataMapper.setup(:default, ENV['DATABASE_URL'])
+end
+
 get '/' do
 	@title = "Musical Jukebox"
 	erb :home
