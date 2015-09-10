@@ -10,9 +10,11 @@ configure do
 	set :password, 'aaron'
 end
 
-# DB for development
+# for development
 configure :development do
 	DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
+	disable :show_exceptions   #To show the 'error' page when eroor occurs. Remove 
+								# to carry out debugging
 end
 
 # DB for production
@@ -120,11 +122,19 @@ post '/login' do
 	end
 end
 
+# Authentication Error 
 error 401 do
 	@title = "Not Authorized | Musical Jukebox"
 	erb :not_authorized
 end
 
+# All errors
+error do
+	@title = "Error"
+	erb :error
+end
+
+# Not Found error
 not_found do
 	@title = "Not Found | Musical Jukebox"
 	erb :not_found
