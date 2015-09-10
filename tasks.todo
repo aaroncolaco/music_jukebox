@@ -2,3 +2,5 @@
  ☐ Figure out why controllers dont work if placed in song.rb
  ☐ Do CSS for show_song.erb
  ✔ Embed videos in show_song using the link from the DB. Use Ruby @done (15-09-10 20:30)
+ ✔ Add not authorized page @done (15-09-10 20:58)
+ ☐ Remove add & delete links for songs when not signed in

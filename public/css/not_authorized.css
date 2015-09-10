@@ -1,0 +1,22 @@
+.not-authorized {
+	background-image:url('/images/unsplash7.jpg');
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;   
+}
+
+.not-authorized .container {
+	position: relative;
+	top:100px;
+}
+
+.not-authorized h1 {
+	color: #ffffff;
+	font-size: 4em;
+}
+
+.not-authorized h2 {
+	color: #ffffff;
+	font-size: 2.5em;
+}

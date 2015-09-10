@@ -54,7 +54,7 @@ end
 
 get '/songs/new' do
 	# Only works if admin logged in
-	halt(401,'Not Authorized') unless session[:admin]
+	halt(401, erb(:not_authorized)) unless session[:admin]
 	@song = Song.new
 	erb :new_song
 end
@@ -74,7 +74,7 @@ post '/songs' do
 	# Need to proted from direct post reqest that someone may try
 	# since the form is accessible only to admin
 	# Only works if admin logged in
-	halt(401,'Not Authorized') unless session[:admin]
+	halt(401, erb(:not_authorized)) unless session[:admin]
 
 	# To convert the entered time string to seconds instead of xx:xx format:
 	# incoming data is in 'song' hash. 
@@ -106,7 +106,7 @@ end
 # Delete song
 delete '/songs/:id' do
 	# Only works if admin logged in
-	halt(401,'Not Authorized') unless session[:admin]
+	halt(401, erb(:not_authorized)) unless session[:admin]
 	Song.get(params[:id]).destroy
 	redirect to('/songs')
 end
