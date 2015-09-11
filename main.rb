@@ -1,5 +1,6 @@
 require 'sinatra'
 require './song'
+require 'sinatra/flash'
 
 # Reload if in development mode
 require 'sinatra/reloader' if development?
