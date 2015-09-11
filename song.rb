@@ -17,8 +17,8 @@ class Song
 	
 end
 
-configure :development do
-	DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
-end
+# To re-initialize the DB, uncomment this line. Need to have the adapter
+# to run DataMapper.auto_migrate!
+# DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
 
 DataMapper.finalize

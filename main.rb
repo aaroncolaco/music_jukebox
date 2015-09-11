@@ -15,8 +15,9 @@ end
 # for development
 configure :development do
 	DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
+	
 	disable :show_exceptions   #To show the 'error' page when eroor occurs. Remove 
-								# to carry out debugging
+								# to carry out debugging & restart server
 end
 
 # DB for production

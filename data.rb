@@ -15,4 +15,8 @@ lyrics = "Some really cool words here..."
 	song.released_on = rand(2015).to_s	#since it changed to date object in song.rb
 	song.lyrics = lyrics
 	song.save
+
+	# To delete the songs
+	# song = Song.last
+	# song.destroy
 end
