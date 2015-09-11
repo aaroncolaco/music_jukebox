@@ -139,7 +139,8 @@ post '/login' do
 		session[:admin] = true
 		redirect to('/songs')
 	else
-		erb :login
+		flash[:notice] = "Incorrect username or password"
+		redirect to('/login')
 	end
 end
 
