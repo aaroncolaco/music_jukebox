@@ -25,22 +25,22 @@ configure :production do
 end
 
 get '/' do
-	@title = "Home | #{settings.app_name}"
+	@title = "Home"
 	erb :home
 end
 
 get '/about' do
-	@title = "About | #{settings.app_name}"
+	@title = "About"
 	erb :about
 end
 
 get '/contact' do
-	@title = "Contact | #{settings.app_name}"
+	@title = "Contact"
 	erb :contact
 end
 
 get '/songs' do
-	@title = "Songs | #{settings.app_name}"
+	@title = "Songs"
 	@songs = Song.all
 	erb :songs
 end
@@ -127,18 +127,18 @@ end
 
 # Authentication Error 
 error 401 do
-	@title = "Not Authorized | #{settings.app_name}"
+	@title = "Not Authorized"
 	erb :not_authorized
 end
 
 # All errors
 error do
-	@title = "Error | #{settings.app_name}"
+	@title = "Error"
 	erb :error
 end
 
 # Not Found error
 not_found do
-	@title = "Not Found | #{settings.app_name}"
+	@title = "Not Found"
 	erb :not_found
 end
