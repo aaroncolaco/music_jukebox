@@ -14,10 +14,21 @@
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="/">Home</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/contact">Contact Us</a></li>
-				<li><a href="/songs">Songs</a></li>
+			<!-- current? is a helper method that returns
+			'active' if route matches arg. nil otherwise.
+			Done to show active link in navbar -->
+				<li class= <%= current? %> >
+					<a href="/">Home</a>
+				</li>
+				<li class=<%= current?( "/about") %> >
+					<a href="/about">About</a>
+				</li>
+				<li class=<%= current?( "/contact") %> >
+					<a href="/contact">Contact Us</a>
+				</li>
+				<li class=<%= current?( "/songs") %> >
+					<a href="/songs">Songs</a>
+				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<% if !session[:admin] %>

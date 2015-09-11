@@ -143,3 +143,9 @@ not_found do
 	@title = "Not Found"
 	erb :not_found
 end
+
+helpers do
+	def current?(path = '/')
+		(request.path == path || request.path == path+'/') ? "active" : nil
+	end
+end
