@@ -4,6 +4,8 @@ require './song'
 # Reload if in development mode
 require 'sinatra/reloader' if development?
 
+set :app_name, "Musical Jukebox"
+
 configure do
 	enable :sessions
 	set :username, 'aaron'
@@ -23,21 +25,22 @@ configure :production do
 end
 
 get '/' do
-	@title = "Musical Jukebox"
+	@title = "Home | #{settings.app_name}"
 	erb :home
 end
 
 get '/about' do
-	@title = "About | Musical Jukebox"
+	@title = "About | #{settings.app_name}"
 	erb :about
 end
 
 get '/contact' do
-	@title = "Contact | Musical Jukebox"
+	@title = "Contact | #{settings.app_name}"
 	erb :contact
 end
 
 get '/songs' do
+	@title = "Songs | #{settings.app_name}"
 	@songs = Song.all
 	erb :songs
 end
@@ -124,18 +127,18 @@ end
 
 # Authentication Error 
 error 401 do
-	@title = "Not Authorized | Musical Jukebox"
+	@title = "Not Authorized | #{settings.app_name}"
 	erb :not_authorized
 end
 
 # All errors
 error do
-	@title = "Error"
+	@title = "Error | #{settings.app_name}"
 	erb :error
 end
 
 # Not Found error
 not_found do
-	@title = "Not Found | Musical Jukebox"
+	@title = "Not Found | #{settings.app_name}"
 	erb :not_found
 end
