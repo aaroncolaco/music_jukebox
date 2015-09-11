@@ -20,6 +20,16 @@ body {
 	margin-left: -50%;
 }
 
+#flash {
+	position: absolute;
+	margin-top: 5%;
+	margin-left: 6%;
+
+	color: red;
+	font-size: 1.5em;
+	font-style: italic;
+}
+
 #footer { 
 	height: 8%;
 	background-color: #832A0D;

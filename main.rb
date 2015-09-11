@@ -90,13 +90,16 @@ post '/songs' do
 
 	# To convert the entered time string to seconds instead of xx:xx format:
 	# incoming data is in 'song' hash. 
-	# create hash 'foo'. Use foo in the update method after formatting the length
+	# create hash 'foo'. Use foo in the create method after formatting the length
 	foo = params[:song]
 	time = foo[:length].to_s.split(':')
 	time = (time.first.to_i * 60 + time.last.to_i)
 	foo[:length] = time
 
-	song = Song.create(foo)
+	# Setting flash message to display. Uses sinatra-flash gem
+	if song = Song.create(foo)
+		flash[:notice] = "Song successfully added"
+	end
 	redirect to("/songs/#{song.id}")
 end
 
@@ -111,7 +114,11 @@ put '/songs/:id' do
 	foo[:length] = time
 
 	song = Song.get(params[:id])
-	song.update(foo)
+
+	# Setting flash message to display. Uses sinatra-flash gem
+	if song.update(foo)
+		flash[:notice] = "Song successfully updated"
+	end
 	redirect to("/songs/#{song.id}")
 end
 
@@ -119,7 +126,10 @@ end
 delete '/songs/:id' do
 	# Only works if admin logged in
 	halt(401) unless session[:admin]
-	Song.get(params[:id]).destroy
+	
+	if Song.get(params[:id]).destroy
+		flash[:notice] = "Song deleted"
+	end
 	redirect to('/songs')
 end
 

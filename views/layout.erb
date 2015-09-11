@@ -10,6 +10,10 @@
 	<body>
 		<%= erb :nav %>
 
+		<!-- Flash Message when song is added/edited/... successfully -->
+		<!-- uses sinatra-flash gem -->
+		<%= styled_flash %>
+
 		<%= yield %>
 
 		<div id="footer">
