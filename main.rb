@@ -82,6 +82,15 @@ get '/songs/:id/edit' do
 	erb :edit_song
 end
 
+get '/download' do
+	erb :download
+end
+
+post 'download/:filename' do
+	filename = params[:filename]
+	send_file "./public/download/#{filename}"
+end
+
 # Add song
 post '/songs' do
 	# Need to proted from direct post reqest that someone may try

@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" href="/css/download.css">	
+
+<div class="download">
+	<div class="container">
+		<h1>Payment</h1>
+
+		<div class="icons">
+			<ul>
+				<li><i class="fa fa-cc-amex"></i></li>
+				<li><i class="fa fa-cc-mastercard"></i></li>
+				<li><i class="fa fa-google-wallet"></i></li>
+				<li><i class="fa fa-cc-visa"></i></li>
+				<li><i class="fa fa-paypal"></i></li>
+			</ul>
+		</div>
+		
+		<form method="POST" action="/download" autocomplete="on">
+			<div class="input-group">
+				<span class="input-group-addon" id="dollar-sign">$</span>
+				<input class="form-control" type="text" name="amount" value="0.99" aria-describedby="dollar-sign" disabled="true" >
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon" id="card-sign"><i class="fa fa-credit-card"></i></span>
+				<input type="text" class="form-control" id="pin" required aria-describedby="card-sign" placeholder="Card Number (Required)" autofocus >
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon" id="card-sign"><i class="fa fa-user-secret"></i></span>
+				<input type="password" class="form-control" id="pin" required aria-describedby="card-sign" placeholder="Pin (Required)" >
+			</div>
+
+			<button type="submit" class="btn btn-default" value="Pay" >
+				<i class="fa fa-paper-plane"></i> Pay
+			</button>
+		</form>
+		
+	</div>
+</div>
