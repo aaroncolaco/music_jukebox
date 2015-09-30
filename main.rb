@@ -86,9 +86,17 @@ get '/download' do
 	erb :download
 end
 
-post 'download/:filename' do
+post '/download' do
+	redirect to ('/download/download_file.zip')
+end
+
+get '/download/:filename' do
 	filename = params[:filename]
-	send_file "./public/download/#{filename}"
+
+	# Set :filename & path to the path to the file to download 
+	options = {:filename => filename, :type => 'application/zip', :disposition => 'attachment'}
+	path = "./public/download_file/#{filename}"
+	send_file path, options
 end
 
 # Add song
