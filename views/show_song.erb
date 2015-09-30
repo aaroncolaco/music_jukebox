@@ -21,6 +21,9 @@
 <div class="song">
 	<div class="container">
 		<h1><%= @song.title %></h1>
+
+		<a href="" class="btn btn-primary download-btn"><i class="fa fa-download"></i></a>
+
 		<h3><%= "by " + @song.artist  +  ' (' + released_on + ')' %></h3>
 		<h5>Length: <%= length %></h5>
 		<a class="btn btn-link" href="<%= video_link %>">YouTube Video</a>
