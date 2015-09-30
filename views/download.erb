@@ -2,7 +2,7 @@
 
 <div class="download">
 	<div class="container">
-		<h1>Payment</h1>
+		<h1 id="changingText">Payment</h1>
 
 		<div class="icons">
 			<ul>
@@ -14,7 +14,7 @@
 			</ul>
 		</div>
 		
-		<form method="POST" action="/download" autocomplete="on">
+		<form id="form" method="POST" action="/download" role="form" autocomplete="on">
 			<div class="input-group">
 				<span class="input-group-addon" id="dollar-sign">$</span>
 				<input class="form-control" type="text" name="amount" value="0.99" aria-describedby="dollar-sign" disabled="true" >
@@ -35,3 +35,6 @@
 		
 	</div>
 </div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/script.js"></script>
