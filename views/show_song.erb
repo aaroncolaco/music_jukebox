@@ -22,7 +22,7 @@
 	<div class="container">
 		<h1><%= @song.title %></h1>
 
-		<a href="/download" class="btn btn-primary download-btn"><i class="fa fa-download"></i></a>
+		<a href="/download" class="btn btn-primary download-btn">Download <i class="fa fa-download"></i></a>
 
 		<h3><%= "by " + @song.artist  +  ' (' + released_on + ')' %></h3>
 		<h5>Length: <%= length %></h5>
